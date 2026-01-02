@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <main class="portfolio-main">
+        <aside class="sidebar">
+            <div class="sidebar-bg" id="sidebar-bg"></div>
+            <div class="photo-container">
+                <img src="profile.jpg" alt="Photo of Jack" class="profile-photo">
+            </div>
+            <h2 class="sidebar-title">Hi, I'm Jack!</h2>
+            <div class="sidebar-about">
+                I'm passionate about mechatronics and mechanical/software design. Feel free to look at some of the projects I've shown here!
+            </div>
+            <div class="sidebar-links">
+                <a class="sidebar-link" href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a class="sidebar-link" href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                <a class="sidebar-link" href="resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i></a>
+            </div>
+        </aside>
+        <section class="main-content">
+            <h1 style="color:#6d6e74; font-size:2.5rem; margin-top:0; margin-bottom:1.2rem;">Engineering and design portfolio</h1>
+            <div style="font-size:1.2rem; color:#7c7f8e; max-width:760px; line-height:1.7;">
+                This portfolio highlights a variety of engineering and design projects spanning mechanical, electrical, and software disciplines. Explore work from interactive games and devices to precision engineering and creative mechanisms. Click on any project for detailed documentation and insights into the design process.
+            </div>
+            <section id="projects">
+                <h2 style="margin-top:2.7rem; color:#6d6e76; font-size:1.5rem; margin-bottom:1.3rem;">Recent Work</h2>
+                <div class="project-list">
+                    <div class="project">
+                        <img src="project1.jpg" class="project-img" alt="Project Example 1">
+                        <h3>Whack-a-mole</h3>
+                        <p>Interactive physical game using custom electronics and robust wood construction. Built for reliability and fun!</p>
+                        <a href="project1.html">View Project</a>
+                    </div>
+                    <div class="project">
+                        <img src="project2.jpg" class="project-img" alt="Project Example 2">
+                        <h3>Feather pen clock</h3>
+                        <p>A unique writing clock combining precise mechanics with whimsical design. Fully documented build process.</p>
+                        <a href="project2.html">View Project</a>
+                    </div>
+                    <div class="project">
+                        <img src="project3.jpg" class="project-img" alt="Project Example 3">
+                        <h3>Magic Chessboard</h3>
+                        <p>A motorized chessboard that moves pieces automatically. Combines robotics, sensors, and playful mechanics.</p>
+                        <a href="project3.html">View Project</a>
+                    </div>
+                    <div class="project">
+                        <img src="project4.jpg" class="project-img" alt="Project Example 4">
+                        <h3>Rotary Heat Test Device</h3>
+                        <p>Custom device designed to evaluate heat transfer in rotating systems—ideal for engineering capstone and practical experimentation.</p>
+                        <a href="project4.html">View Project</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Jack. All rights reserved.</p>
+    </footer>
+    <script>
+    // Parallax effect for sidebar image
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebarBg = document.getElementById('sidebar-bg');
+      // Change 'sidebar-bg.jpg' to your preferred image
+      sidebarBg.style.backgroundImage = "url('sidebar-bg.jpg')";
+      function updateParallax() {
+          const scrollY = window.scrollY;
+          sidebarBg.style.backgroundPosition = `center ${scrollY * 0.2}px`;
+      }
+      window.addEventListener('scroll', updateParallax);
+      updateParallax();
+    });
+    </script>
+</body>
+</html>
