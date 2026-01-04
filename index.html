@@ -19,8 +19,8 @@
                 I'm passionate about mechatronics and mechanical/software design. Feel free to look at some of the projects I've shown here!
             </div>
             <div class="sidebar-links">
-                <a class="sidebar-link" href="https://linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a class="sidebar-link" href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                <a class="sidebar-link" href="https://www.linkedin.com/in/johnlewis05" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a class="sidebar-link" href="mailto:jack@arachnerd.com"><i class="fas fa-envelope"></i></a>
                 <a class="sidebar-link" href="resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i></a>
             </div>
         </aside>
@@ -33,27 +33,27 @@
                 <h2 style="margin-top:2.7rem; color:#6d6e76; font-size:1.5rem; margin-bottom:1.3rem;">Recent Work</h2>
                 <div class="project-list">
                     <div class="project">
-                        <img src="project1.jpg" class="project-img" alt="Project Example 1">
-                        <h3>Whack-a-mole</h3>
-                        <p>Interactive physical game using custom electronics and robust wood construction. Built for reliability and fun!</p>
+                        <img src="images/car-images/finalcar.jpg" class="project-img" alt="Picture of Potential Energy Propulsion Racer">
+                        <h3>Potential Energy Propulsion Racer</h3>
+                        <p>Spring and gravity powered vehicle that was designed to accomplish specific tasks.</p>
                         <a href="project1.html">View Project</a>
                     </div>
                     <div class="project">
-                        <img src="project2.jpg" class="project-img" alt="Project Example 2">
-                        <h3>Feather pen clock</h3>
+                        <img src="images/clock-images/ClockPicture.jpg" class="project-img" alt="Feather Pen Clock">
+                        <h3>Feather Pen Clock</h3>
                         <p>A unique writing clock combining precise mechanics with whimsical design. Fully documented build process.</p>
                         <a href="project2.html">View Project</a>
                     </div>
                     <div class="project">
-                        <img src="project3.jpg" class="project-img" alt="Project Example 3">
-                        <h3>Magic Chessboard</h3>
-                        <p>A motorized chessboard that moves pieces automatically. Combines robotics, sensors, and playful mechanics.</p>
+                        <img src="images/button-game-images/ButtonGame.jpg" class="project-img" alt="Button Game Platform">
+                        <h3>Button Game Platform</h3>
+                        <p>An interactive game platform built with wood and PLA to play a variety of games.</p>
                         <a href="project3.html">View Project</a>
                     </div>
                     <div class="project">
-                        <img src="project4.jpg" class="project-img" alt="Project Example 4">
-                        <h3>Rotary Heat Test Device</h3>
-                        <p>Custom device designed to evaluate heat transfer in rotating systems—ideal for engineering capstone and practical experimentation.</p>
+                        <img src="images/clean-my-water-images/finalFilter.png" class="project-img" alt="Project Example 4">
+                        <h3>Clean My Water</h3>
+                        <p>A portable, natural-material-based water filtration system for Outdoor Enthusiasts</p>
                         <a href="project4.html">View Project</a>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       const sidebarBg = document.getElementById('sidebar-bg');
       // Change 'sidebar-bg.jpg' to your preferred image
-      sidebarBg.style.backgroundImage = "images/tundy.jpg";
+      sidebarBg.style.backgroundImage = url('images/sidebar-bg.jpg');
       function updateParallax() {
           const scrollY = window.scrollY;
           sidebarBg.style.backgroundPosition = `center ${scrollY * 0.2}px`;

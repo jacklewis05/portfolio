@@ -3,23 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whack-a-mole | Jack's Portfolio</title>
+    <title>Potential Energy Propulsion Racer | Jack's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="project-detail">
     <main class="project-detail-main">
         <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
-        <h1>Whack-a-mole</h1>
-        <p class="project-detail-desc">Interactive physical game using custom electronics and robust wood construction. Built for reliability and fun!<br><br>
-            <b>Technologies used:</b> Arduino, woodworking, custom PCBs, LEDs, mechanical switches.<br><br>
-            <b>About the project:</b> This game brings the classic arcade style into a portable, classroom-safe format. Designed for exhibitions and lots of hands-on use.<br><br>
-            <i>Add more photos below as you complete your project.</i>
-        </p>
-        <div class="project-detail-photos">
-            <!-- Example image: -->
-            <!-- <img src="project1-img1.jpg" alt="Whack-a-mole Photo 1"> -->
-        </div>
+        <h1>Potential Energy Propulsion Racer</h1>
+        <p class="project-detail-desc">The purpose of this project is to create a 3D-printed vehicle that can perform as 
+            well as possible on an obstacle course by using three available energy sources: the height of a four-foot ramp, 
+            the stored energy in three mechanical springs, and the electrical energy in a 5V supercapacitor that drives a small 
+            propeller. The entire vehicle must be designed in SolidWorks and printed in ABS on the Bambu Lab H2D Pro printers or 
+            using PLA via other Bambu printers. At the moment it’s released, the vehicle must be small enough to fit inside a
+             12” × 8” × 4” box, though it may automatically unfold or expand during its run. The final design also needs to include
+              at least two gears that mesh and operate together on their own during motion.</p>
+
+        <p class="project-detail-desc"><b>Technologies used:</b> Mechanical design, spring mechanics, gravity physics, precision engineering.</p>
+
+        <p class="project-detail-desc"><b>About the project:</b> The main challenge is to develop a lightweight and dependable system that can take these 
+            different forms of stored energy and turn them into smooth, controlled movement across the course. Doing this well
+             requires careful decisions about how to balance weight and strength, how to transmit spring energy effectively, 
+             when to activate the propeller powered by the supercapacitor, and how to keep the vehicle stable as it accelerates 
+             down the ramp and moves through obstacles.</p>
+
+        <h2>Our Final Design</h2>
+        <figure class="project-figure">
+                <img src="images/car-images/finalCarReport.png" alt="Final Design of Potential Energy Propulsion Racer" class="project-detail-main-img">
+            <figcaption class="project-caption">Final design</figcaption>
+        </figure>
+
+        <p class="project-detail-desc"><b>Chassis</b> Our final car has a few special features in order to maximise point-gain. The design itself centers around the main chassis 
+            and tracks. On the chassis, we secure the springs to points near the front and secure the springs with a separate piece that 
+            is able to be press-fit into the car. The springs are then connected to a slider that is attached to the chassis and slides on tracks.</p>
+
+        <figure class="project-figure">
+                <img src="images/car-images/track.png" alt="Track and slider" class="project-detail-main-img">
+            <figcaption class="project-caption">Track and slider</figcaption>
+        </figure>
+
+        <figure class="project-figure">
+                <img src="images/car-images/gearbox.png" alt="Gearbox design" class="project-detail-main-img">
+            <figcaption class="project-caption">Gearbox design</figcaption>
+        </figure>
+        <p class="project-detail-desc"><b>Gearbox</b> The gearbox uses a 12:1 compound gear ratio to amplify the torque from the spring system, 
+            allowing for more controlled acceleration and better handling of obstacles.</p>
+        
+        <figure class="project-figure">
+                <img src="images/car-images/side-profile-car.png" alt="Side profile of car" class="project-detail-main-img">
+            <figcaption class="project-caption">Joints used to assemble car</figcaption>
+        <p class="project-detail-desc"><b>Integration</b> The car is designed to be printed in multiple pieces that can be assembled using snap-fit joints. 
+            This modular approach allows for easier printing and assembly, as well as the ability to replace or modify individual components as needed. 
+            The main drive axles are supported by ball bearings that are press-fit into the body that connects to the car. This allows for the car to drive 
+            smoothly and straight without the need to 3d print our own axles. Our wheels were also made with a diameter of 3.75 inches to give room for the 
+            lifting arms while maximizing the amount of distance traveled per rotation.</p>
+
+        </figure class="project-figure">
+            <img src="images/car-images/lifting-arm.png" alt="Lifting arm design" class="project-detail-main-img">
+            <figcaption class="project-caption">Lifting arms in motion</figcaption>
+        <p class="project-detail-desc"><b>Lifting Arms</b> The lifting arms were an important part of our car. As a team, we decided to gain extra points by 
+            hitting the optional spinners along the track. The lever arm is fixed to the front of the car, and the other arm is connected to the slider. 
+            This allows the arm to lie flat when at the full extension of the springs and then rise as the car lifts up, hitting the spinners. 
+            We needed the arm to raise as the spinners were 6 inches above the track, and our car needed to fit under 4 inches in height.
+
+        <h2>Testing</h2>
+        <p class="project-detail-desc">We chose to utilize the ramp at the beginning of the track to overcome static friction and simply get the car moving. 
+            Immediately after the ramp, we decided to place a long jump. This was to be our main source of points. 
+            The idea is that once the jump is completed, we will already have net +200 points (500 - 300 from the ramp). 
+            From there, we can attempt to hit the spinner targets for 200 points each and cross carpet sections for 100 points each.</p>
+        <figure class="project-figure">
+                <video controls class="project-detail-main-img">
+                    <source src="images/car-images/video/testingvod.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <figcaption class="project-caption">Testing the car on the course</figcaption>
+        </figure>
+        <p class="project-detail-desc"> This was one of our practice runs, we were able to effectively cross the long jump and hit one of the spinners. 
+            However our car would drift to the left due to one of the wheels slipping due to the torque from the gearbox. This video was posted on our 
+            Dean of Engineerings instagram reaching 1.8 million views!</p>
+        <p class="project-detail-desc"> After this run, we changed the course adding in another small jump for an extra 200 points which we accomplished. 
+            After all the testing was over, certain teams were awarded extra points for different challenges. We earned an extra 500 points as our car earned the 
+            Elegance award for best design, giving us 1200 points total, placing us third overall.</p>
+        
+        <h2>Conclusion</h2>
+        <p class="project-detail-desc"> Overall, this project was a great experience in mechanical design and problem-solving. 
+            It challenged us to think critically about how to effectively use different energy sources to achieve our goals. 
+            The final design successfully integrated spring mechanics, gravity, and electrical propulsion to navigate the obstacle course and earn points. 
+            This project not only enhanced our technical skills but also fostered teamwork and creativity in engineering design.</p>
+
+        <p class="project-detail-desc">Had we more time to go back and change our design further, we would have changed a few things. 
+            First, we would have redesigned the lifting arms to be a bit more rigid as they tended to wobble when hitting the spinners. 
+            Additionally, we would have worked on improving the alignment of the wheels to prevent drifting and ensure a straighter path down the course. 
+            We also might have experimented with different spring tensions to optimize the balance between speed and control throughout the run.
+            Finally, we would of added the optional 5v super capacitor and propeller to the front of our car to give us a boost when our springs ran out. </p>
     </main>
     <footer>
         <p>&copy; 2026 Jack. All rights reserved.</p>

@@ -11,14 +11,41 @@
     <main class="project-detail-main">
         <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
         <h1>Feather pen clock</h1>
-        <p class="project-detail-desc">A unique writing clock combining precise mechanics and whimsical design. Fully documented build process.<br><br>
-            <b>Technologies used:</b> Stepper motors, 3D printing, microcontrollers.<br><br>
-            <b>About the project:</b> The Feather pen clock writes time on paper with a mechanical arm, a blend of engineering and artistic fun. Follow the documentation and see detailed results <i>(photos below!)</i>.<br><br>
-            <i>Add more photos below as you build/evolve the project.</i>
+        <p class="project-detail-desc">A unique writing clock combining precise mechanics and whimsical design. 
+            Fully documented build process.<br><br>
+            <b>Technologies used:</b> Computer-aided design, servo control, stepper motor drivers, 3D printing,
+             microcontroller programming, object-oriented programming<br><br>
+            <b>About the project:</b> A mechanical clock driven by a gantry and servo-mounted feather pen. 
+            This clock will writes the time on itself all day in the mechanical engineering building.</i>
         </p>
         <div class="project-detail-photos">
-            <!-- <img src="project2-img1.jpg" alt="Feather pen clock Photo 1"> -->
+            <figure class="project-figure">
+                <video src="images/clock-images/clock-video/ClockHoming.mp4" controls class="project-detail-main-img clock-homing-video">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption class="project-caption">Clock homing sequence</figcaption>
+            </figure>
+            <p class="project-detail-desc"><b>Homing</b> When turned on, the arduino nano initiates a calibration sequence 
+                that sets minimum and maximum x and y coordinates. The gantry moves until it hits its limit switch in y and 
+                each of two limit switches in x. This is used to create planes in which numbers will be drawn.</p>
+
+            <figure class="project-figure">
+                <img src="images/clock-images/ClockCircuits.jpg" alt="Clock Circuitry" class="project-detail-main-img clock-circuits-img">
+                <figcaption class="project-caption">Clock circuitry</figcaption>
+            </figure>
+            <p class="project-detail-desc"><b>Circuitry</b> 2 A4988 stepper motor drivers facilitate control of the longitudinal and lateral stepper motors.
+                 A LM7805 5V regulator takes in 12V from a power supply and outputs 5V for arduino power and driver logic power. The 12V is used to power the 
+                 stepper motors' coils. Limit switches are wired with pull-down resistors, and the servo is controlled by a single arduino pin.</p>
+
+            <figure class="project-figure">
+                <video src="images/clock-images/clock-video/NumberChange.mp4" controls class="project-detail-main-img clock-homing-video">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption class="project-caption">Number Changing sequence</figcaption>
+            </figure>
+            <p class="project-detail-desc"><b>Number Changing</b> During each change of minute, the clock erases one of the LCD boogie boards and writes in a new number.</p>
         </div>
+
     </main>
     <footer>
         <p>&copy; 2026 Jack. All rights reserved.</p>
