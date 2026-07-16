@@ -161,6 +161,19 @@ body.project-detail {
     text-align: center;
     margin-bottom: 2.6rem;
 }
+/* Design objectives / numbered lists: match project detail typography */
+.design-objectives {
+    font-size: 1.05rem;
+    color: #505877;
+    max-width: 650px;
+    line-height: 1.65;
+    margin: 0 auto 2.6rem auto;
+    padding-left: 1.15rem;
+    text-align: left;
+}
+.design-objectives li {
+    margin-bottom: 0.6rem;
+}
 .project-detail-photos {
     margin-top: 2rem;
     display: flex;

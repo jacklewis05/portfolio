@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catching an Egg Theif | Jack's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="project-detail">
+    <main class="project-detail-main">
+        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+        <h1>Catching an Egg Thief</h1>
+        <p class="project-detail-desc">One of my roommates continues to steal my eggs, and instead of confronting them I created a device to catch them in the act.</p>
+        <p class="project-detail-desc">This device uses a force sensor to detect when the eggs are lifted. The sensor is connected to an ESP32 housed inside a control box. 
+            When the ESP32 detects a change in force, it sends a signal to an ESP32-CAM positioned elsewhere in the room, prompting it to take a photograph. 
+            The image is then transmitted over Wi-Fi to a Flask server running on my computer, where it is displayed.</p>
+
+        <p class="project-detail-desc"><b>Technologies used:</b> Fusion 360, ESP32, Perf Boards, Soldering, C++, Python.</p>
+
+        <h2>Background</h2>
+        <p class="project-detail-desc">While living at college, one of my 9 roommates continued to take my eggs. For weeks I would look in my pack of eggs to discover a couple had gone missing. 
+            Despite texting everyone to stop taking my eggs they kept disappearing, and since I’m an engineer there is only one thing for me to do. I must create a device to catch them red-handed.</p>
+
+        <h2>Constraints</h2>
+
+        <p class="project-detail-desc">When designing the device, I had several important constraints to consider.</p>
+        <p class="project-detail-desc">First, no wireless signal could reliably escape from inside the refrigerator. 
+            This meant that the sensor detecting the carton’s removal needed to be wired to a controller outside the fridge.</p>
+        <p class="project-detail-desc">Second, I wanted the camera responsible for documenting the egg heist to remain reasonably concealed. 
+            Running visible wires across the room would have made the surveillance operation slightly less discreet.</p>
+        <p class="project-detail-desc">Third, both devices needed to operate on battery power for extended periods. After all, the system would be much 
+            less effective if it ran out of power moments before the thief made their move.</p>
+        <p class="project-detail-desc">Fortunately, I had recently become interested in building projects with the ESP32, which offers several capabilities beyond those of an Arduino Nano. 
+            One particularly useful feature is ESP-NOW, which allows ESP32 boards to communicate directly and efficiently with one another. During my research, 
+            I also discovered the ESP32-CAM, an ESP32 board with an integrated camera. It provided exactly what I needed to capture the culprit in the act.</p>
+
+        <h2>The Design</h2> 
+        <p class="project-detail-desc">The design is relatively simple. A force sensor is mounted inside the refrigerator beneath the egg carton, with wires running outside the fridge to a control box designed in Fusion 360. 
+            The control box houses the ESP32 that monitors the sensor. When the carton is lifted, the ESP32 sends a signal to the camera, prompting it to take a photo and catch the egg thief in the act.</p>
+
+        <h3> The Force Sensor </h3>
+        <p class="project-detail-desc">I used a thin-film pressure sensor purchased from Amazon to detect the presence of the egg carton. The sensor is rated for temperatures from -40°C to 85°C, 
+            which is well beyond the conditions it would experience inside a refrigerator. It can also measure forces up to 6 kg, providing more than enough capacity for a carton of eggs.</p>
+        <p class="project-detail-desc">I designed a simple mounting bracket to secure the sensor inside the refrigerator while keeping the wires clear of the carton.</p>
+
+        <figure class="project-figure">
+            <img src="images/egg-thief-images/forceSensorCAD.png" alt="Force Sensor Design" class="project-detail-main-img">
+            <figcaption class="project-caption">Force Sensor Bracket</figcaption>
+        </figure>
+
+        <h3> The Control Box </h3>
+        <p class="project-detail-desc">The control box needed to serve several functions. It required an indicator to show when force was being detected, 
+            a reliable connection between the pressure sensor and the ESP32, a portable power source, and an enclosure to protect and organize all of the components.</p>
+        <p class="project-detail-desc">Let's start with the circuitry: </p>
+        <figure class="project-figure">
+            <img src="images/egg-thief-images/breadboard.png" alt="Circuitry" class="project-detail-main-img">
+            <figcaption class="project-caption">Prototyping on breadboard</figcaption>
+        </figure>
+
+        <p class="project-detail-desc">The setup is relatively simple. When the force sensor detects a reading greater than 200, an LED turns on to indicate that the egg carton is in place. 
+            Once the force is removed, the ESP32 sends a command to the camera to take a photo.</p>
+        <p class="project-detail-desc">After confirming that the entire system worked as intended, I transferred the electronics onto a perfboard to create a cleaner and more permanent assembly.</p>
+
+        <figure class="project-figure">
+            <img src="images/egg-thief-images/IMG_2591.jpg" alt="Perboard" class="project-detail-main-img">
+            <figcaption class="project-caption">Final circuit on perfboard</figcaption>
+        </figure>
+
+        <p class="project-detail-desc">The system is powered by a 9-volt battery, with a buck converter reducing the voltage to the 5 volts required by the ESP32. To keep the components protected and organized, 
+            I designed a compact enclosure that could securely house the battery, converter, circuit board, and ESP32.</p>
+
+        <figure class="project-figure">
+            <img src="images/egg-thief-images/case.png" alt="final parts" class="project-detail-main-img">
+            <figcaption class="project-caption">Control box with everything in it</figcaption>
+        </figure>
+
+        <h3> The Camera </h3>
+        <p class="project-detail-desc">The camera setup is fairly straightforward. After flashing the ESP32-CAM with the program, it simply waits to receive a signal through ESP-NOW before taking a photo. 
+            The only additional component I designed was a small enclosure that allowed the camera to be mounted securely to the wall.</p>
+
+        <figure class="project-figure">
+            <img src="images/egg-thief-images/camera.png" alt="final parts" class="project-detail-main-img">
+            <figcaption class="project-caption">Camera with enclosure</figcaption>
+        </figure>
+
+
+
+        <h3> Communication </h3>
+        <p class="project-detail-desc">ESPNOW: ESP-NOW is a peer-to-peer wireless communication protocol developed by Espressif Systems that allows ESP32 and 
+            ESP8266 microcontrollers to talk directly to each other without a Wi-Fi router. It bypasses the traditional network stack, using only the data-link layer, 
+            which results in ultra-fast, low-latency, and energy-efficient data transfers.</p>
+        <p class="project-detail-desc">Flask: Flask was used to receive and store the images taken by the ESP32-CAM. After the camera captured a photo, it sent the image over Wi-Fi to a 
+            Flask server running on a computer. The server received the file through an upload route, saved it in a folder, and made it available on a simple gallery webpage. 
+            This allowed the captured images to be viewed from another device connected to the same network.</p>
+
+        <h3> Full setup </h3>
+        <p class="project-detail-desc">Here is the full setup in the fridge</p>
+
+        <figure class="project-figure">
+            <img src="images/egg-thief-images/IMG_2610.jpg" alt="final parts" class="project-detail-main-img">
+            <figcaption class="project-caption">Full setup</figcaption>
+        </figure>
+
+        <p class="project-detail-desc">(disregard the fridge, 9 roomates)</p>
+
+
+        <h2>Conclusion</h2>
+        <p class="project-detail-desc">And after a couple days…</p>
+
+        <figure class="project-figure">
+            <img src="images/egg-thief-images/capture_20260420_213853_949361.jpg" alt="final parts" class="project-detail-main-img">
+            <figcaption class="project-caption">The Culprit</figcaption>
+        </figure>
+
+        <p class="project-detail-desc">The culprit was found</p>
+
+        <p class="project-detail-desc">Overall, I greatly enjoyed this project. It gave me the opportunity to take a small problem from everyday life and apply the skills I had 
+            learned to create a practical solution. Through the process, I gained experience with wireless communication networks, Python, Wi-Fi connectivity, mechanical design,
+             and mechatronic system integration.</p>
+        <p class="project-detail-desc">If I were to improve the project, I would consider replacing the pressure sensor with a Hall effect sensor. 
+            This could provide a more reliable way to detect when the egg carton is removed.</p>
+        <p class="project-detail-desc">If you have any questions, please feel free to reach out!</p>
+    </main>
+    <footer>
+        <p>&copy; 2026 Jack. All rights reserved.</p>
+    </footer>
+</body>
+</html>
