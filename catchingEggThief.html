@@ -12,6 +12,12 @@
         <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
         <h1>Catching an Egg Thief</h1>
         <p class="project-detail-desc">One of my roommates continues to steal my eggs, and instead of confronting them I created a device to catch them in the act.</p>
+
+        <figure class="project-figure">
+            <img src="images/egg-thief-images/capture_20260420_213853_949361.jpg" alt="final parts" class="project-detail-main-img">
+            <figcaption class="project-caption">The Culprit</figcaption>
+        </figure>
+
         <p class="project-detail-desc">This device uses a force sensor to detect when the eggs are lifted. The sensor is connected to an ESP32 housed inside a control box. 
             When the ESP32 detects a change in force, it sends a signal to an ESP32-CAM positioned elsewhere in the room, prompting it to take a photograph. 
             The image is then transmitted over Wi-Fi to a Flask server running on my computer, where it is displayed.</p>
